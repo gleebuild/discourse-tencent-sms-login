@@ -1,23 +1,40 @@
-.tencent-login-wrap {
-  max-width: 360px; 
-  margin: 2rem auto; 
-  padding: 1.5rem; 
-  background: var(--secondary); 
-  border-radius: 12px;
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
+// plugins/discourse-tencent-sms-login/assets/stylesheets/common/tencent-login.scss
+/* 安全初始化CSS */
+body.tencent-login-page {
+  #main-outlet {
+    max-width: 360px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: var(--secondary);
+    border-radius: 12px;
   }
   
+  .header-cloak {
+    display: none !important; /* 隐藏顶部冲突元素 */
+  }
+  
+  /* 修正路径问题的资源引用 */
+  @font-face {
+    font-family: 'InterVariable';
+    // 使用插件相对路径
+    src: url('../../../plugins/discourse-tencent-sms-login/fonts/InterVariable.woff2?v=0.0.19') format('woff2');
+  }
+}
+
+.tencent-login-wrap {
+  max-width: 360px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--secondary);
+  border-radius: 12px;
+  
   .field {
-    position: relative;
     margin-bottom: 1rem;
     
     input {
-      width: 100%; 
-      padding: 0.8rem; 
-      border-radius: 8px; 
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
       border: 1px solid var(--primary-low-mid);
       font-size: 1rem;
     }
@@ -30,22 +47,6 @@
       color: var(--primary-medium);
       font-size: 0.9rem;
     }
-    
-    .btn-resend {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: var(--tertiary);
-      cursor: pointer;
-      font-size: 0.9rem;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
   
   .btn {
@@ -53,19 +54,6 @@
     padding: 0.8rem;
     font-size: 1rem;
     margin-top: 1rem;
-  }
-  
-  .login-options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
   }
   
   .login-footer {
@@ -83,36 +71,6 @@
         text-decoration: underline;
       }
     }
-  }
-  
-  .agreement {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    color: var(--primary-medium);
-    
-    input {
-      margin: 0;
-    }
-  }
-  
-  .forgot-password {
-    text-align: right;
-    margin-top: -0.5rem;
-    margin-bottom: 1rem;
-    
-    a {
-      font-size: 0.9rem;
-      color: var(--tertiary);
-    }
-  }
-  
-  .reset-instruction {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: var(--primary-medium);
   }
   
   .tencent-hint {
