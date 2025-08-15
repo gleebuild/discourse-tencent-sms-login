@@ -15,7 +15,11 @@ plugins:
     default: ""
   tencent_sms_template_id:
     default: ""
+  tencent_sms_default_email_domain:
+    default: "example.com"
   tencent_sms_wordpress_sso_url:
     default: ""
   tencent_sms_wordpress_sso_secret:
     default: ""
+  support_username:
+    default: "support"
