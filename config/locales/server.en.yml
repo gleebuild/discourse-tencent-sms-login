@@ -7,9 +7,13 @@ en:
     tencent_sms_sdk_app_id: "SMS SdkAppId"
     tencent_sms_sign_name: "SMS sign name"
     tencent_sms_template_id: "SMS template id (e.g., with code variable)"
+    tencent_sms_default_email_domain: "Default email domain for new users"
     tencent_sms_wordpress_sso_url: "WordPress SSO endpoint URL"
     tencent_sms_wordpress_sso_secret: "Shared secret for SSO signature"
+    support_username: "Support username for chat"
   tencent_sms:
     errors:
       code_invalid: "Invalid or expired verification code"
       too_many_requests: "Too many requests; please try later"
+      user_creation_failed: "Failed to create user account"
+      user_not_found: "User not found"
