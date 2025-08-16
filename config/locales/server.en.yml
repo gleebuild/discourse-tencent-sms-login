@@ -1,0 +1,15 @@
+en:
+  site_settings:
+    tencent_sms_enabled: "Enable Tencent SMS login"
+    tencent_sms_debug_mode: "Debug mode (do not actually send SMS; log the code)"
+    tencent_sms_secret_id: "Tencent Cloud SecretId"
+    tencent_sms_secret_key: "Tencent Cloud SecretKey"
+    tencent_sms_sdk_app_id: "SMS SdkAppId"
+    tencent_sms_sign_name: "SMS sign name"
+    tencent_sms_template_id: "SMS template id (e.g., with code variable)"
+    tencent_sms_wordpress_sso_url: "WordPress SSO endpoint URL"
+    tencent_sms_wordpress_sso_secret: "Shared secret for SSO signature"
+  tencent_sms:
+    errors:
+      code_invalid: "Invalid or expired verification code"
+      too_many_requests: "Too many requests; please try later"

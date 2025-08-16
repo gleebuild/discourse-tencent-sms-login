@@ -1,0 +1,21 @@
+plugins:
+  tencent_sms_enabled:
+    default: false
+    client: true
+  tencent_sms_debug_mode:
+    default: true
+    client: true
+  tencent_sms_secret_id:
+    default: ""
+  tencent_sms_secret_key:
+    default: ""
+  tencent_sms_sdk_app_id:
+    default: ""
+  tencent_sms_sign_name:
+    default: ""
+  tencent_sms_template_id:
+    default: ""
+  tencent_sms_wordpress_sso_url:
+    default: ""
+  tencent_sms_wordpress_sso_secret:
+    default: ""
