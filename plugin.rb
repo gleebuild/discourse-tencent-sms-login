@@ -15,6 +15,9 @@ after_initialize do
 
   # Routes for our controller
   Discourse::Application.routes.append do
+    # ✅ 前端页面的服务器兜底：让 /tencent-login 走应用布局（交给 Ember 前端渲染）
+    get "/tencent-login" => "tencent_sms#spa"
+
     post "/tencent-sms/send" => "tencent_sms#send_code"
     post "/tencent-sms/verify" => "tencent_sms#verify_code"
     post "/tencent-sms/login" => "tencent_sms#login"
@@ -26,11 +29,17 @@ after_initialize do
 
   class ::TencentSmsController < ::ApplicationController
     requires_plugin ::TencentSmsLogin::PLUGIN_NAME
-    skip_before_action :verify_authenticity_token, only: [:send_code, :verify_code, :login, :wordpress_sso, :wechat_openid_callback]
-    before_action :ensure_enabled
+    skip_before_action :verify_authenticity_token,
+      only: [:send_code, :verify_code, :login, :wordpress_sso, :wechat_openid_callback]
+    before_action :ensure_enabled, except: [:spa]
 
     def ensure_enabled
       raise Discourse::NotFound unless SiteSetting.tencent_sms_enabled
+    end
+
+    # ✅ 渲染空页面但使用 application 布局，让 Ember 前端接管 /tencent-login
+    def spa
+      render html: "", layout: true
     end
 
     def send_code
