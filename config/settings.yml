@@ -1,4 +1,0 @@
-plugins:
-  tencent_sms_enabled:
-    default: true
-    client: true
